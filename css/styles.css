@@ -1,0 +1,308 @@
+*{
+    margin: 0px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Suse', sans-serif;    
+}
+.container{
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 250px;    
+}
+.header{
+    background: url(../assets/img/background-cinema.jpg);
+    background-position: center;
+    background-attachment:inherit;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    text-shadow: 2px 2px 4px rgb(81, 56, 42)
+}
+.logo{                
+    flex:1 1 auto;                        
+}
+.menu{
+    background: rgba(0, 0, 0, .2); /*background con 30% de opacidad*/
+    display: flex;
+    flex-flow: row nowrap;
+    height: 70px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    position: relative; 
+}
+.menu-toggle { /* Nuevo botón de hamburguesa */
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 30px ;
+    cursor: pointer;
+    background:transparent;
+    color:#8c7b4e;
+    border: none;
+}                          
+.nav{                
+    flex:5 1 auto;                
+}
+.nav a{
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding:0 10px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out; /* Ajusta la duración y la función de easing según tus preferencias */
+}
+.nav.show {
+    display: flex;    
+    opacity: 1; /* Para una animación de fundido */
+    transform: translateY(0); /* Para una animación de deslizamiento */
+}
+.nav a:hover{
+    color: #c1aa47fe;
+}   
+.main-content{          
+    align-items: center;            
+}
+h1{
+    font-family: 'Suse', serif;
+    font-size: 3.5rem;
+    color: #b29d64;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+}
+h5{
+    font-family: 'Suse', serif;
+    font-size: 1.6rem;
+    color:#ffffff;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+}
+.section{
+    background:white;
+    display: flex;
+}
+.articles{
+    background: white;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+    }
+.article{                
+    flex: 1 1 auto;
+    color: #5d3406ce;
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    margin: 10px;
+    flex: 1 1 auto;
+    background: linear-gradient(to bottom, transparent, #d4c29f);
+}
+.article a{
+    color: #fff;
+    font-size: 13px;
+    padding: 10px;
+    background: #082b08;
+    margin: 10px 0;
+    display: inline-block;
+}        
+.famousQuotes, .nextWeeks {
+    margin-left: 20px;                
+}
+.famousQuotes, .nextWeeks li {
+    line-height: 2.5rem;
+}
+.section table {
+    border-collapse: collapse;
+    width: 100%;
+}
+/*estilos para las tablas*/
+.section th, .section td {
+    padding: 15px;
+    text-align: left;
+}
+/* Opacidad alternada para las filas */
+.section tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05); /* 5% de opacidad */
+}
+.section tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.03); /* 3% de opacidad */
+}
+.aside{
+background:white;
+}
+.ad{
+    color: #5d3406ce;
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    margin: 10px 10px 0 0px;                
+    background: linear-gradient(to bottom, transparent, #d4c29f);
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {                
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+} 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}    
+input[type="submit"] {
+    background-color: #baa67d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;               
+}
+input[type="submit"]:hover {
+    background-color: #d1bf9a;
+}
+.news { 
+    width: 250px;          
+    height: 350px; 
+    overflow: auto;                
+    justify-content:space-around;
+}           
+.ad a {
+    color:#5d3406ce;
+    font-size: 20px;                
+    letter-spacing: 0.4px;
+    padding: 10px;      
+    text-decoration: none;          
+}
+.ad a:visited{
+    color:#d1bf9a;
+}
+h4{        
+    color: #5d3406ce;
+    padding: 10px;
+    text-transform: uppercase;
+}    
+.footer{
+    background: linear-gradient(to bottom, transparent, #d4c29f);
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}    
+.information{            
+        text-align: center;
+}
+.information a{
+    color:#b29d64;
+    font-size: 16px;
+    padding: 0 10px;
+    letter-spacing: 2px;
+}
+
+@media all and (max-width: 1080px){
+    /*ajuste del layout para pantallas más grandes*/
+    .section{
+        flex-direction: column; /*cambia la dirección de flexbox a columna*/
+    }
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+    .aside{        
+        flex: 1 1 auto;  /*el asisde ocupa todo el espacio disponible*/
+    }
+    h1 {
+        font-size: 3.5rem;
+    }    
+    h5 {
+        font-size: 1.6rem;
+    }
+    .container{
+        margin-top:350px;
+    }
+    .famousQuotes, .nextWeeks li { /*ajuste del interlineado de los formularios*/
+        line-height: 2.5rem;
+    }
+}
+@media all and (max-width: 768px){
+    .articles{
+        flex-direction: column;        
+    }
+    h1 {
+        font-size: 2rem;
+    }    
+    h5 {
+        font-size: 1.3rem;
+    }
+    .nav a{
+        font-size: .8rem;
+}
+.container{
+    margin-top: 20rem;
+}
+.famousQuotes, .nextWeeks li {
+    line-height: 2rem;
+}
+
+}
+@media all and (max-width: 480px){
+    .aside{
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }    
+    h5 {
+        font-size: .9rem;
+    }
+    .menu-toggle {
+        display: block; /*se muestra el botón menú*/
+    }
+    .nav {
+        display: none; /*se oculta la navegación*/
+    }
+    .nav a{
+        font-size: .8rem;
+    }
+    .container{
+        margin-top: 16rem;
+    }
+    .famousQuotes, .nextWeeks li {
+        line-height: 1.8rem;
+    }
+
+}
+@media all and (max-width: 375px){
+    .aside{
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }    
+    h5 {
+        font-size: .7rem;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .nav {
+        display: none;
+    }
+    .nav a{
+        font-size: .6rem;
+    }
+    .famousQuotes, .nextWeeks li {
+        line-height: 1.5rem;
+    }
+}
